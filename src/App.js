@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import './App.css';
+import './index.css';
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
