@@ -5,16 +5,21 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Mail, Phone, Sparkles, Shirt, Scissors, Ruler, Move3D, ArrowRight, CheckCircle2 } from "lucide-react";
-
 // --- Simple 3D Scene (cloth-like waving plane) ---------------------------------
+
 function WavyCloth() {
   const meshRef = useRef();
-  // Create a basic waving vertex animation without external shaders
+
   return (
-    <mesh ref={meshRef} rotation={[-0.6, 0.6, 0]}> 
-      <planeGeometry args={[3.2, 2.2, 64, 64]} />
-      <meshStandardMaterial color="#b6e3ff" roughness={0.9} metalness={0.05} />
-    </mesh>
+    <>
+      {/* 3D mesh */}
+      <mesh ref={meshRef} rotation={[-0.6, 0.6, 0]}>
+        <planeGeometry args={[3.2, 2.2, 64, 64]} />
+        <meshStandardMaterial color="#b6e3ff" roughness={0.9} metalness={0.05} />
+      </mesh>
+
+
+    </>
   );
 }
 
@@ -147,7 +152,7 @@ export default function PortfolioSite() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-semibold text-white leading-tight">
-                Photoreal 3D Clothing for <span className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">Forward‑Thinking Brands</span>
+                Photorealistic 3D Clothing for <span className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">Forward‑Thinking Brands</span>
               </motion.h1>
               <p className="mt-4 text-lg text-zinc-300 max-w-prose">
                 Reduce sampling costs, preview collections before production, and wow customers with interactive product viewers.
@@ -189,7 +194,7 @@ export default function PortfolioSite() {
       {/* WORK / PORTFOLIO */}
       <Section id="work" eyebrow="Selected Work" title="Portfolio">
         <div className="grid md:grid-cols-3 gap-6">
-          <WorkCard title="Techwear Shell Jacket" subtitle="Photoreal concept → pre-production" tags={["Nylon Ripstop", "PBR", "4K Renders"]} />
+          <WorkCard title="Techwear Shell Jacket" subtitle="Defying concept → pre-production" tags={["Nylon Ripstop", "PBR", "4K Renders"]} />
           <WorkCard title="Minimalist Hoodie" subtitle="Shopify 3D viewer asset" tags={["Cotton Fleece", "Turntable", "USDZ/GLB"]} />
           <WorkCard title="Satin Dress" subtitle="High-fashion lookbook CGI" tags={["Silk Shader", "Studio Lighting", "Animation"]} />
           <WorkCard title="Denim Jacket" subtitle="Distressed wash exploration" tags={["Denim", "Displacement", "8K Maps"]} />
